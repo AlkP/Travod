@@ -22,6 +22,16 @@
         = :country
       %div.col-sm-8
         = f.text_field :country, :class => "form-control", :id => "country", :type => "groupname"
+    %div.form-group
+      %label.col-sm-4.control-label.some{ for: 'native_language' }
+        = :native_language
+      %div.col-sm-8
+        = f.text_field :native_language, :class => "form-control", :id => "native_language", :type => "groupname"
+    %div.form-group
+      %label.col-sm-4.control-label.some{ for: 'target_language' }
+        = :target_language
+      %div.col-sm-8
+        = f.text_field :target_language, :class => "form-control", :id => "target_language", :type => "groupname"
 
   - if action_name == 'new'
     %div.form-group

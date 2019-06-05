@@ -10,10 +10,16 @@ class ProfilesController < ApplicationController
     @profile = Profile.new
   end
 
+  def show
+    @profile = Profile.find(params[:id])
+  end
+
   def create
     @profile =  case params['profile']['source']
                 when 'www.proz.com/profile'
                   ProfileProzParsingService.create(params['profile']['source_link'])
                 end
+
+    redirect_to profile_path(@profile)
   end
 end
