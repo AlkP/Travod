@@ -7,7 +7,9 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :source, null: false, index: true
       t.string :source_link, null: false
 
-      t.jsonb :language, null: false, default: {}
+      t.json :language, null: false, default: {}
+      # if you want use postgresql need json -> jsonb
+      # t.jsonb :language, null: false, default: {}
 
       t.timestamps
     end
