@@ -1,0 +1,41 @@
+
+= form_for @profile, html: { class: 'form-horizontal', role: 'form' } do |f|
+
+  %div.form-group
+    %label.col-sm-4
+    %div.col-sm-8
+      = render 'profiles/errors'
+
+  - if action_name == 'show'
+    %div.form-group
+      %label.col-sm-4.control-label.some{ for: 'first_name' }
+        = :first_name
+      %div.col-sm-8
+        = f.text_field :first_name, autofocus: true, :class => "form-control", :id => "first_name", :type => "groupname"
+    %div.form-group
+      %label.col-sm-4.control-label.some{ for: 'last_name' }
+        = :last_name
+      %div.col-sm-8
+        = f.text_field :last_name, :class => "form-control", :id => "last_name", :type => "groupname"
+    %div.form-group
+      %label.col-sm-4.control-label.some{ for: 'country' }
+        = :country
+      %div.col-sm-8
+        = f.text_field :country, :class => "form-control", :id => "country", :type => "groupname"
+
+  - if action_name == 'new'
+    %div.form-group
+      %label.col-sm-4.control-label.some{ for: 'source' }
+        = :source
+      %div.col-sm-8
+        = f.select :source, options_for_select(@source), {}, :id => "source", :class => "form-control", :type => "groupname"
+    %div.form-group
+      %label.col-sm-4.control-label.some{ for: 'source_link' }
+        = :source_link
+      %div.col-sm-8
+        = f.text_field :source_link, :class => "form-control", :id => "source_link", :type => "groupname"
+
+  %div.form-group
+    %label.col-sm-4
+    %div.col-sm-8
+      = f.submit

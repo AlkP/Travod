@@ -1,0 +1,8 @@
+%tr
+  %td
+    = profile.first_name
+  %td
+    = profile.last_name
+  %td
+    = link_to profile.source_link,
+        profile_path(profile)
