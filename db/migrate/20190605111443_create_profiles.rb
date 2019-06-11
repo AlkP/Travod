@@ -4,7 +4,7 @@ class CreateProfiles < ActiveRecord::Migration[5.2]
       t.string :first_name, null: true
       t.string :last_name, null: true
       t.string :country, null: true
-      t.string :source, null: false, index: true
+      t.string :source, null: false
       t.string :source_link, null: false
 
       t.json :language, null: false, default: {}
